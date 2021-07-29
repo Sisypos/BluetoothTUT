@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BluetoothTUT.MainPage"
+             
+             xmlns:vm1="clr-namespace:BluetoothTUT.ViewModels">
+    
+    <ContentPage.BindingContext>
+        <vm1:DeviceViewModel>
+        </vm1:DeviceViewModel>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <Button
+            x:Name="btnStatus"
+            Text="Status"
+            Clicked="btnStatus_Clicked">
+        </Button>
+        <Button
+            x:Name="btnScan"
+            Text="Scan"
+            Clicked="btnScan_Clicked">
+        </Button>
+        
+        <Button
+            x:Name="btnConnect"
+            Text="Connect"
+            Clicked="btnConnect_Clicked">
+        </Button>
+
+        <Button
+            x:Name="btnKnowConnect"
+            Text="Connect to known device"
+            Clicked="btnKnowConnect_Clicked">
+        </Button>
+        
+        <Button
+            x:Name="btnGetServises"
+            Text="Get Services"
+            Clicked="btnGetServises_Clicked">
+        </Button>
+
+        <Button
+            x:Name="btnGetCharacters"
+            Text="Get Characters"
+            Clicked="btnGetCharacters_Clicked">
+        </Button>
+
+        <Button
+            x:Name="btnDiscriptor"
+            Text="Discriptors"
+            Clicked="btnDiscriptor_Clicked">
+        </Button>
+
+        <Button
+            x:Name="btnDescRW"
+            Text="Read Write descriptor"
+            Clicked="btnDescRW_Clicked">
+        </Button>
+
+        <Button
+            x:Name="btnGetRW"
+            Text="Read Write get"
+            Clicked="btnGetRW_Clicked">
+        </Button>
+        
+        <Button
+            x:Name="btnUpdate"
+            Text="Update"
+            Clicked="btnUpdate_Clicked">
+        </Button>
+
+        <ListView 
+            x:Name="lv" 
+            ItemSelected="lv_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label
+                                Text="{Binding NativeDevice.Id}">
+                            </Label>
+                            <Label
+                                Text="{Binding NativeDevice.Name}">
+                            </Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
